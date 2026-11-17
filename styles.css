@@ -1,0 +1,258 @@
+* {
+    font-family: Verdana, Arial, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #222222;
+    border: 6px double #c41e3a;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    animation: christmasPage 1.6s steps(1) infinite;
+}
+
+@keyframes christmasPage {
+    0% {
+        background-color: #ffd6d6;
+        border-color: #146b3a;
+    }
+
+    25% {
+        background-color: #d4f5dd;
+        border-color: #c41e3a;
+    }
+
+    50% {
+        background-color: #fff3c4;
+        border-color: #146b3a;
+    }
+
+    75% {
+        background-color: #ffffff;
+        border-color: #f8b229;
+    }
+}
+
+/* Header Banner */
+.bg1 {
+    background-color: #c41e3a;
+    color: white;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 10px;
+    animation: christmasBanner 0.8s steps(1) infinite;
+}
+
+@keyframes christmasBanner {
+    0% {
+        background-color: #880000;
+    }
+
+    50% {
+        background-color: #0e6900;
+    }
+}
+
+.card {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.card h1 {
+    color: white;
+    margin: 0;
+    text-align: left;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    margin-right: 15px;
+    background-color: dodgerblue;
+}
+
+#sentence1 {
+    background-color: #14523d;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+nav {
+    text-align: center;
+    margin: 20px 0;
+}
+
+nav a {
+    background-color: #1f7a5c;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+
+a:hover {
+    background-color: #0303ba;
+    text-decoration: underline;
+}
+
+h1,
+h3 {
+    color: #1f7a5c;
+    text-align: center;
+}
+
+p {
+    color: #333333;
+}
+
+.item {
+    border: 2px solid black;
+    padding: 10px;
+    margin: 5px;
+}
+
+ol,
+ul {
+    background-color: white;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    padding: 20px 40px;
+    margin: 15px 0;
+    box-shadow: #222222 5px;
+}
+
+li {
+    padding: 5px 0;
+    color: #333333;
+}
+
+
+#img1 {
+    display: block;
+    border: 3px dotted #1f7a5c;
+    margin: 25px auto;
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 3-Column Main Layout */
+.main-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr 280px;
+    gap: 20px;
+    margin-top: 15px;
+    align-items: start;
+}
+
+/* Left Sidebar - Links */
+.left-sidebar {
+    background-color: white;
+    border: 2px solid #1f7a5c;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.left-sidebar h3 {
+    color: #1f7a5c;
+    margin-top: 0;
+    text-align: center;
+}
+
+.left-sidebar a {
+    display: block;
+    background-color: #1f7a5c;
+    color: white;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+}
+
+.left-sidebar a:hover {
+    background-color: #14523d;
+    text-decoration: underline;
+}
+
+/* Center Content */
+.center-content {
+    min-width: 0;
+}
+
+/* Right Sidebar - Notice Form */
+.right-sidebar {
+    background-color: white;
+    border: 2px solid #1f7a5c;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.right-sidebar h3 {
+    color: #1f7a5c;
+    margin-top: 0;
+    text-align: center;
+}
+
+.right-sidebar label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #1f7a5c;
+}
+
+.right-sidebar #title,
+.right-sidebar #msg {
+    width: 100%;
+    background-color: #fafafa;
+    padding: 10px;
+    border: 1px solid #bbbbbb;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.right-sidebar #msg {
+    height: 100px;
+}
+
+.btn {
+    background-color: #1f7a5c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.btn:hover {
+    background-color: #14523d;
+}
+
+.welcome-box {
+    background-color: #e6f4ef;
+    border: 2px solid #1f7a5c;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#alert {
+    color: #1f7a5c;
+    font-weight: bold;
+    margin: 0;
+}

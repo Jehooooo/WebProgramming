@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title> Campus Notices </title>
+
+    <link rel="stylesheet" href="styles.css" />
+
+</head>
+
+<body>
+    <div class="bg1">
+        <header class="card">
+            <img class="logo" src="logo1-transparent.png" alt="DMMMSU Logo" />
+            <div>
+                <h1> DMMMSU - SLUC </h1>
+            </div>
+        </header>
+    </div>
+
+    <div class="main-layout">
+        <!-- Left Column: Links -->
+        <aside class="left-sidebar">
+            <h3>Links</h3>
+            <a href="index.html">Home</a>
+            <a href="week1/week1.html">Week 1</a>
+            <a href="week2/week2.html">Week 2</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="notices.html">Read notices</a>
+        </aside>
+
+        <!-- Center Column: Main Content -->
+        <main class="center-content">
+            <p id="sentence1"> Don Mariano Marcos Memorial State University</p>
+
+            <h1> College of Computer Science </h1>
+
+
+            <h3> Faculty Members </h3>
+
+            <ol>
+                <li> Haydee Limson </li>
+                <li> Darwin Llavorre </li>
+                <li> Enrique Abad </li>
+                <li> Charlie Marzan </li>
+                <li> Carlos Villanueva </li>
+            </ol>
+
+            <ul>
+                <li> Haydee Limson </li>
+                <li> Darwin Llavorre </li>
+                <li> Enrique Abad </li>
+                <li> Charlie Marzan </li>
+                <li> Carlos Villanueva </li>
+            </ul>
+
+            <img id="img1" src="ccs.jpg" alt="ANIMAL" width="500px" height="400px" />
+        </main>
+
+        <!-- Right Column: Title and Message Form -->
+        <aside class="right-sidebar">
+            <div class="welcome-box">
+                <p id="alert"> Welcome </p>
+            </div>
+
+            <h3>Post Notice</h3>
+            <form action="/api/notices" method="post">
+                <label for="title">Title</label>
+                <input id="title" name="title" type="text" required />
+
+                <label for="msg">Message</label>
+                <textarea id="msg" name="message"></textarea>
+
+                <button class="btn" type="submit">Post notice</button>
+            </form>
+        </aside>
+    </div>
+</body>
+
+</html>
