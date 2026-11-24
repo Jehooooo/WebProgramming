@@ -2,21 +2,21 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UCC Campus Notices - Union Christian College</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Union Christian College - Week 3 Portal (About, Notices, Contact &amp; Social)</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="page-shell">
+    <div class="page-shell" id="top">
         <!-- Top University Header Banner -->
         <div class="bg1">
             <header class="card">
-                <img class="logo" src="https://ucc.edu.ph/media/42dd59f55328a676" alt="Union Christian College Official Seal" width="88" height="88" />
+                <img class="logo" src="https://ucc.edu.ph/media/42dd59f55328a676" alt="Union Christian College Official Seal" width="88" height="88">
                 <div class="brand-copy">
                     <span class="campus-tag">Established 1910 | Faith, Integrity, Responsibility, Excellence, Service</span>
-                    <h1>Union Christian College - SFC LU</h1>
+                    <p class="brand-title">Union Christian College - SFC LU</p>
                     <p class="brand-subtitle">Widdoes St., Brgy. II, City of San Fernando, La Union 2500</p>
                 </div>
                 <div class="header-badge">
@@ -26,123 +26,349 @@
             </header>
         </div>
 
-        <!-- 3-Column Main Layout -->
-        <div class="main-layout">
-            <!-- Left Column: Navigation & Quick Portals -->
-            <aside class="left-sidebar" aria-label="Campus Navigation">
-                <h3>UCC Portal</h3>
-                <nav class="sidebar-nav" aria-label="Primary Links">
-                    <a href="../index.html">All Submissions</a>
-                    <a href="../week1/week1.html">Week 1 Activity</a>
-                    <a href="../week2/week2.html">Week 2 Activity</a>
-                    <a href="week2.html" aria-current="page">Week 3 Home (UCC Portal)</a>
-                    <a href="about.html">About UCC</a>
-                    <a href="contact.html">Contact Us</a>
-                    <a href="social.html">Social Media</a>
-                    <a href="../notices.html">Read Notices</a>
-                    <a href="#schools">Academic Schools</a>
-                    <a href="#values">Core Values (F.I.R.E.S.)</a>
-                    <a href="https://ucc.edu.ph/" target="_blank" rel="noopener noreferrer">Official UCC Website</a>
-                </nav>
+        <!-- Unified Sticky Navigation Bar -->
+        <nav class="top-nav" aria-label="Primary Navigation">
+            <div class="nav-group">
+                <a href="../index.html">All Submissions</a>
+                <a href="../week1/week1.html">Week 1</a>
+                <a href="../week2/week2.html">Week 2</a>
+                <a href="week2.html" aria-current="page">Week 3</a>
+                <a href="../notices.html">Read Notices</a>
+            </div>
+            <div class="nav-group nav-sections">
+                <a href="#about">About Us</a>
+                <a href="#academics">Schools &amp; Values</a>
+                <a href="#notices">Post Notice</a>
+                <a href="#contact">Contact</a>
+                <a href="#social">Social</a>
+            </div>
+        </nav>
 
-                <div class="campus-info-card" id="contact">
-                    <h4>Campus Office Hours</h4>
-                    <p><strong>Mon - Fri:</strong> 8:00 AM - 5:00 PM</p>
-                    <p><strong>Location:</strong> San Fernando City, La Union</p>
-                    <p><strong>Portal:</strong> SIAS Online &amp; eLearning</p>
-                </div>
-            </aside>
+        <main class="page-main">
+            <p id="sentence1">Union Christian College - Official Campus Portal, Academic Profile &amp; Community Hub</p>
 
-            <!-- Center Column: Main Content -->
-            <main class="center-content">
-                <p id="sentence1">Union Christian College - Official Campus Bulletin &amp; Academic Directory</p>
+            <!-- BODY PART 1: ABOUT US -->
+            <section class="hero-card about-hero" id="about" aria-labelledby="about-heading">
+                <div class="hero-text">
+                    <span class="section-eyebrow">About Us &bull; Our History &amp; Identity</span>
+                    <h1 id="about-heading">About Union Christian College</h1>
+                    <p>
+                        Founded in 1910 in the City of San Fernando, La Union, Union Christian College (UCC) is a
+                        private Christian educational institution dedicated to Christ-centered Whole Person Education.
+                        For 116 years, UCC has nurtured globally competitive graduates grounded in Christian faith,
+                        research innovation, and community service across the Ilocos Region.
+                    </p>
 
-                <section class="hero-card" id="about">
-                    <div class="hero-text">
-                        <span class="section-eyebrow">Campus Spotlight</span>
-                        <h1>Academic Schools &amp; Campus Notices</h1>
-                        <p>
-                            Dedicated to Christ-centered Whole Person Education for over a century, Union Christian College
-                            nurtures globally competitive graduates grounded in Christian faith, research innovation, and
-                            community service across the Ilocos Region.
-                        </p>
+                    <dl class="quick-facts">
+                        <div class="fact-chip">
+                            <dt>Founded</dt>
+                            <dd>1910 (116 Years)</dd>
+                        </div>
+                        <div class="fact-chip">
+                            <dt>Location</dt>
+                            <dd>San Fernando City, La Union</dd>
+                        </div>
+                        <div class="fact-chip">
+                            <dt>Core Values</dt>
+                            <dd>F.I.R.E.S.</dd>
+                        </div>
+                        <div class="fact-chip">
+                            <dt>Programs</dt>
+                            <dd>Basic Ed, College &amp; Graduate</dd>
+                        </div>
+                    </dl>
+
+                    <div class="hero-actions">
+                        <a class="btn-link btn-primary" href="#contact">Contact Campus Offices</a>
+                        <a class="btn-link btn-secondary" href="https://ucc.edu.ph/" target="_blank" rel="noopener noreferrer">Official UCC Website</a>
                     </div>
-                    <figure class="featured-figure">
-                        <img id="img1" src="https://ucc.edu.ph/media/0c112d1f76863e72" alt="Union Christian College Celebrating 116 Years of Faith, Excellence, and Service" width="800" height="450" />
-                        <figcaption>Union Christian College celebrates 116 years of Faith, Excellence, and Service in San Fernando City, La Union.</figcaption>
-                    </figure>
-                </section>
+                </div>
 
-                <div class="info-grid">
-                    <section class="list-card" id="schools">
-                        <h3>UCC Academic Schools &amp; Programs</h3>
+                <figure class="featured-figure">
+                    <img id="img1" src="https://ucc.edu.ph/media/0c112d1f76863e72" alt="Union Christian College Celebrating 116 Years of Faith, Excellence, and Service" width="800" height="450">
+                    <figcaption>Union Christian College celebrates 116 years of Faith, Excellence, and Service in San Fernando City, La Union.</figcaption>
+                </figure>
+            </section>
+
+            <!-- BODY PART 2: MISSION, VALUES & ACADEMIC SCHOOLS -->
+            <section class="academics-section" id="academics" aria-label="Mission, Core Values, and Academic Schools">
+                <div class="three-col-grid">
+                    <article class="list-card">
+                        <h2>Mission &amp; Vision</h2>
+                        <p class="card-intro">
+                            Union Christian College develops competent, ethical, and service-oriented graduates guided by
+                            Christian faith, quality instruction, relevant research, and active community outreach.
+                        </p>
+                        <ul>
+                            <li><strong>Whole Person Education:</strong> Developing mind, body, and spirit together.</li>
+                            <li><strong>Academic Quality:</strong> Preparing learners for board exams and global careers.</li>
+                            <li><strong>Community Outreach:</strong> Serving churches, families, and neighbors in La Union.</li>
+                        </ul>
+                    </article>
+
+                    <article class="list-card" id="values">
+                        <h2>Core Values (F.I.R.E.S.)</h2>
+                        <ul>
+                            <li><strong>Faith:</strong> Living out Christ-centered teachings in daily life since 1910.</li>
+                            <li><strong>Integrity:</strong> Upholding Christian ethics, truth, and academic honesty.</li>
+                            <li><strong>Responsibility:</strong> Active stewardship and servant student leadership.</li>
+                            <li><strong>Excellence:</strong> Consistent top-performing licensure and academic standards.</li>
+                            <li><strong>Service:</strong> Dedicated outreach to church and community in La Union.</li>
+                        </ul>
+                    </article>
+
+                    <article class="list-card" id="schools">
+                        <h2>UCC Academic Schools</h2>
                         <ol>
-                            <li><strong>School of Education, Arts and Sciences (SEAS):</strong> Teacher Education, Liberal Arts &amp; Sciences</li>
+                            <li><strong>School of Education, Arts &amp; Sciences (SEAS):</strong> Teacher Education, Liberal Arts &amp; Sciences</li>
                             <li><strong>School of Business Science (SBS):</strong> Accountancy, Business Administration &amp; Management</li>
                             <li><strong>School of Health Sciences (SHS):</strong> BS Nursing &amp; Allied Health Programs</li>
                             <li><strong>Basic Education Schools (BES):</strong> Elementary, Junior High &amp; Senior High School</li>
-                            <li><strong>Graduate Studies:</strong> Master of Arts in Nursing (MAN) &amp; Master of Arts in Education (MAEd)</li>
+                            <li><strong>Graduate Studies:</strong> Master of Arts in Nursing (MAN) &amp; Education (MAEd)</li>
                         </ol>
-                    </section>
+                    </article>
+                </div>
+            </section>
 
-                    <section class="list-card" id="values">
-                        <h3>Core Values (F.I.R.E.S.) &amp; Campus Highlights</h3>
-                        <ul>
-                            <li><strong>Faith:</strong> Christ-centered Whole Person Education since 1910</li>
-                            <li><strong>Integrity:</strong> Upholding Christian ethics, truth, and academic honesty</li>
-                            <li><strong>Responsibility:</strong> Active stewardship and servant student leadership</li>
-                            <li><strong>Excellence:</strong> Consistent top-performing board licensure readiness</li>
-                            <li><strong>Service:</strong> Dedicated outreach to church and community in La Union</li>
+            <!-- BODY PART 3: CAMPUS BULLETINS & POST NOTICE -->
+            <section class="notices-section" id="notices" aria-labelledby="post-notice-heading">
+                <div class="two-col-split">
+                    <div class="surface-card">
+                        <span class="section-eyebrow">Campus Bulletin</span>
+                        <h2 id="post-notice-heading">Post UCC Notice</h2>
+                        <form class="portal-form" action="../notices.html" method="get" aria-labelledby="post-notice-heading">
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label for="title">Notice Title <span aria-hidden="true">*</span></label>
+                                    <input id="title" name="title" type="text" placeholder="e.g., SEAS General Assembly" required minlength="3" maxlength="120">
+                                </div>
+
+                                <div class="form-field">
+                                    <label for="department">Target Department</label>
+                                    <select id="department" name="department">
+                                        <option value="All Campus">All UCC Campus Units</option>
+                                        <option value="SEAS">School of Education, Arts &amp; Sciences (SEAS)</option>
+                                        <option value="SBS">School of Business Science (SBS)</option>
+                                        <option value="SHS">School of Health Sciences (SHS)</option>
+                                        <option value="BES">Basic Education Schools (BES)</option>
+                                        <option value="Graduate Studies">Graduate Studies</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="msg">Announcement Details <span aria-hidden="true">*</span></label>
+                                <textarea id="msg" name="message" placeholder="Write the schedule, venue, and details of your campus announcement..." required minlength="5"></textarea>
+                            </div>
+
+                            <button class="btn" type="submit">Publish Notice</button>
+                        </form>
+                    </div>
+
+                    <aside class="surface-card bulletin-card" aria-label="Latest Campus Bulletins">
+                        <div class="welcome-box">
+                            <p id="alert">Welcome to UCC San Fernando!</p>
+                            <span class="welcome-sub">Official Student &amp; Faculty Bulletin</span>
+                        </div>
+
+                        <h3>Latest Bulletins</h3>
+                        <div class="bulletin-list">
+                            <div class="bulletin-item">
+                                <strong>Oct 2026 CPALE Passers</strong>
+                                <p>Congratulations to our newest Union Christian College Certified Public Accountants!</p>
+                            </div>
+                            <div class="bulletin-item">
+                                <strong>PRICE 2026 Conference</strong>
+                                <p>Highlighting digital transformation, whole-person formation, and research innovation.</p>
+                            </div>
+                            <div class="bulletin-item">
+                                <strong>SIAS Online &amp; eLearning Portal</strong>
+                                <p>Access schedules, enrollment updates, and departmental memos online anytime.</p>
+                            </div>
+                        </div>
+
+                        <a class="view-all-link" href="../notices.html">View all campus notices &rarr;</a>
+                    </aside>
+                </div>
+            </section>
+
+            <!-- BOTTOM PART: CONTACT US & SOCIAL MEDIA -->
+            <div class="bottom-hub">
+                <!-- Contact Section -->
+                <section class="bottom-section" id="contact" aria-labelledby="contact-form-heading">
+                    <div class="section-heading">
+                        <span class="section-eyebrow">Get In Touch</span>
+                        <h2 id="contact-form-heading">Contact Union Christian College</h2>
+                        <p>Send an inquiry to our campus offices regarding admissions, enrollment, student records, or general school information.</p>
+                    </div>
+
+                    <div class="two-col-split contact-layout">
+                        <div class="surface-card">
+                            <h3>Send an Inquiry</h3>
+                            <form class="contact-form" action="#contact" method="post" aria-labelledby="contact-form-heading">
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label for="full-name">Full Name <span aria-hidden="true">*</span></label>
+                                        <input id="full-name" name="full_name" type="text" autocomplete="name" placeholder="Juan Dela Cruz" required minlength="2" maxlength="100">
+                                    </div>
+
+                                    <div class="form-field">
+                                        <label for="email">Email Address <span aria-hidden="true">*</span></label>
+                                        <input id="email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" placeholder="student@ucc.edu.ph" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-field">
+                                        <label for="phone">Phone Number (Optional)</label>
+                                        <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="09XX XXX XXXX" aria-describedby="phone-hint">
+                                        <span id="phone-hint" class="field-hint">Include a mobile or landline number for callbacks.</span>
+                                    </div>
+
+                                    <div class="form-field">
+                                        <label for="office">Office / Department</label>
+                                        <select id="office" name="office">
+                                            <option value="General Inquiry">General Campus Inquiry</option>
+                                            <option value="Admissions">Admissions Office</option>
+                                            <option value="Registrar">Registrar's Office</option>
+                                            <option value="Accounting">Accounting &amp; Finance Office</option>
+                                            <option value="SEAS">School of Education, Arts &amp; Sciences (SEAS)</option>
+                                            <option value="SBS">School of Business Science (SBS)</option>
+                                            <option value="SHS">School of Health Sciences (SHS)</option>
+                                            <option value="BES">Basic Education Schools (BES)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-field">
+                                    <label for="subject">Subject <span aria-hidden="true">*</span></label>
+                                    <input id="subject" name="subject" type="text" placeholder="e.g., Enrollment Requirements for BSIT" required minlength="3" maxlength="120">
+                                </div>
+
+                                <div class="form-field">
+                                    <label for="message">Message <span aria-hidden="true">*</span></label>
+                                    <textarea id="message" name="message" placeholder="Write your question or request here..." required minlength="10"></textarea>
+                                </div>
+
+                                <button class="btn" type="submit">Send Message</button>
+                            </form>
+                        </div>
+
+                        <div class="contact-side-stack">
+                            <div class="surface-card">
+                                <h3>Direct Contact Details</h3>
+                                <address class="page-address">
+                                    <p><strong>Union Christian College</strong></p>
+                                    <p>Widdoes St., Brgy. II, City of San Fernando, La Union 2500, Philippines</p>
+                                    <p><strong>Email:</strong> <a href="mailto:info@ucc.edu.ph">info@ucc.edu.ph</a></p>
+                                    <p><strong>Website:</strong> <a href="https://ucc.edu.ph/" target="_blank" rel="noopener noreferrer">ucc.edu.ph</a></p>
+                                    <p><strong>Hours:</strong> Mon &ndash; Fri, 8:00 AM &ndash; 5:00 PM &bull; Sat, 8:00 AM &ndash; 12:00 PM</p>
+                                </address>
+                            </div>
+
+                            <div class="surface-card">
+                                <h3>Campus Office Directory</h3>
+                                <div class="table-wrap">
+                                    <table class="basic-table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Office</th>
+                                                <th scope="col">Location</th>
+                                                <th scope="col">Hours</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Admissions Office</td>
+                                                <td>Main Admin Bldg, Ground Floor</td>
+                                                <td>Mon &ndash; Fri, 8 AM &ndash; 5 PM</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Registrar's Office</td>
+                                                <td>Main Admin Bldg, Ground Floor</td>
+                                                <td>Mon &ndash; Fri, 8 AM &ndash; 5 PM</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Student Affairs</td>
+                                                <td>Student Center, 2nd Floor</td>
+                                                <td>Mon &ndash; Fri, 8 AM &ndash; 5 PM</td>
+                                            </tr>
+                                            <tr>
+                                                <td>University Library</td>
+                                                <td>Academic Bldg, 2nd Floor</td>
+                                                <td>Mon &ndash; Sat, 8 AM &ndash; 5 PM</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Social Media Section -->
+                <section class="bottom-section" id="social" aria-labelledby="social-heading">
+                    <div class="social-header-row">
+                        <div class="section-heading">
+                            <span class="section-eyebrow">Official Channels</span>
+                            <h2 id="social-heading">UCC Social Media &amp; Online Platforms</h2>
+                            <p>Follow our official channels for campus announcements, class advisories, board exam results, and student events.</p>
+                        </div>
+
+                        <ul class="hashtag-list" aria-label="Official UCC Hashtags">
+                            <li>#UCCSanFernando</li>
+                            <li>#UCC116Years</li>
+                            <li>#WholePersonEducation</li>
+                            <li>#UCCFIRES</li>
                         </ul>
-                    </section>
-                </div>
-            </main>
-
-            <!-- Right Column: Title and Message Form -->
-            <aside class="right-sidebar" aria-label="Publish Campus Notice">
-                <div class="welcome-box">
-                    <p id="alert">Welcome to UCC San Fernando!</p>
-                    <span class="welcome-sub">Official Student &amp; Faculty Bulletin</span>
-                </div>
-
-                <h3 id="post-notice-heading">Post UCC Notice</h3>
-                <form action="../notices.html" method="get" aria-labelledby="post-notice-heading">
-                    <div class="form-field">
-                        <label for="title">Notice Title <span aria-hidden="true">*</span></label>
-                        <input id="title" name="title" type="text" placeholder="e.g., SEAS General Assembly" required minlength="3" maxlength="120" />
                     </div>
 
-                    <div class="form-field">
-                        <label for="department">Target Department</label>
-                        <select id="department" name="department">
-                            <option value="All Campus">All UCC Campus Units</option>
-                            <option value="SEAS">School of Education, Arts &amp; Sciences (SEAS)</option>
-                            <option value="SBS">School of Business Science (SBS)</option>
-                            <option value="SHS">School of Health Sciences (SHS)</option>
-                            <option value="BES">Basic Education Schools (BES)</option>
-                            <option value="Graduate Studies">Graduate Studies</option>
-                        </select>
+                    <div class="social-grid">
+                        <article class="social-card">
+                            <h3>Facebook</h3>
+                            <p class="social-handle">@UnionChristianCollegeSFC</p>
+                            <p>Official campus advisories, enrollment schedules, event photos, and community news.</p>
+                            <a class="social-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Visit Facebook</a>
+                        </article>
+
+                        <article class="social-card">
+                            <h3>Instagram</h3>
+                            <p class="social-handle">@uccsanfernandolu</p>
+                            <p>Student life highlights, campus spotlights, and celebration stories from UCC.</p>
+                            <a class="social-link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Visit Instagram</a>
+                        </article>
+
+                        <article class="social-card">
+                            <h3>YouTube</h3>
+                            <p class="social-handle">Union Christian College Official</p>
+                            <p>Recorded chapel services, graduation ceremonies, seminars, and campus features.</p>
+                            <a class="social-link" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">Visit YouTube</a>
+                        </article>
+
+                        <article class="social-card">
+                            <h3>Official Website</h3>
+                            <p class="social-handle">ucc.edu.ph</p>
+                            <p>Complete academic program guides, admission requirements, and online student portals.</p>
+                            <a class="social-link" href="https://ucc.edu.ph/" target="_blank" rel="noopener noreferrer">Open Website</a>
+                        </article>
                     </div>
 
-                    <div class="form-field">
-                        <label for="msg">Announcement Details <span aria-hidden="true">*</span></label>
-                        <textarea id="msg" name="message" placeholder="Write the schedule, venue, and details of your campus announcement..." required minlength="5"></textarea>
+                    <div class="guidelines-bar">
+                        <h3>Online Community Guidelines</h3>
+                        <ul class="guidelines-grid">
+                            <li><strong>Be Respectful:</strong> Keep discussions courteous and aligned with UCC's core values.</li>
+                            <li><strong>Verify Announcements:</strong> Rely on official UCC pages for class or enrollment advisories.</li>
+                            <li><strong>Protect Privacy:</strong> Never share student numbers, grades, or passwords publicly.</li>
+                            <li><strong>Official Support:</strong> Send formal inquiries via the Contact form above.</li>
+                        </ul>
                     </div>
-
-                    <button class="btn" type="submit">Publish Notice</button>
-                </form>
-
-                <div class="recent-mini">
-                    <h4>Latest Bulletins</h4>
-                    <p><strong>Oct 2026 CPALE Passers:</strong> Congratulations to our newest UCC CPAs!</p>
-                    <p><strong>PRICE 2026 Conference:</strong> Digital transformation &amp; research innovation.</p>
-                    <a class="view-all-link" href="../notices.html">View all campus notices</a>
-                </div>
-            </aside>
-        </div>
+                </section>
+            </div>
+        </main>
 
         <footer class="site-footer">
-            <p>&copy; 2026 Union Christian College | Widdoes St., City of San Fernando, La Union | CSAE 104 Web Programming (Week 2)</p>
+            <p>&copy; 2026 Union Christian College | Widdoes St., City of San Fernando, La Union | CSAE 104 Web Programming (Week 3)</p>
+            <a class="back-top-link" href="#top">Back to top &uarr;</a>
         </footer>
     </div>
 </body>
