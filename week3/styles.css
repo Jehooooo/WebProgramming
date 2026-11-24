@@ -206,11 +206,37 @@ body {
     text-decoration: none;
 }
 
-.left-sidebar a[aria-current="page"] {
+.left-sidebar a[aria-current="page"],
+.page-shell:has(#about:target) .left-sidebar a[href="#about"],
+.page-shell:has(#schools:target) .left-sidebar a[href="#schools"],
+.page-shell:has(#values:target) .left-sidebar a[href="#values"],
+.page-shell:has(#contact:target) .left-sidebar a[href="#contact"],
+.page-shell:has(#social:target) .left-sidebar a[href="#social"] {
     background-color: var(--ucc-green-800);
     color: #ffffff;
     border-inline-start: 4px solid var(--ucc-gold-400);
     font-weight: 700;
+}
+
+.page-shell:has(#about:target, #schools:target, #values:target, #contact:target, #social:target) .left-sidebar a[aria-current="page"] {
+    background-color: var(--ucc-green-50);
+    color: var(--ucc-green-900);
+    border-inline-start: 1px solid transparent;
+    font-weight: 600;
+}
+
+.page-shell:has(#about:target, #schools:target, #values:target, #contact:target, #social:target) .left-sidebar a[aria-current="page"]:hover {
+    background-color: var(--ucc-green-700);
+    color: #ffffff;
+}
+
+section[id] {
+    scroll-margin-top: 1.5rem;
+}
+
+section:target {
+    border-color: var(--ucc-gold-500);
+    box-shadow: 0 0 0 3px rgba(240, 180, 41, 0.35), var(--shadow-md);
 }
 
 .campus-info-card {
