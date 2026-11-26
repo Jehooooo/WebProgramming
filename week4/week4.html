@@ -19,7 +19,15 @@
 </head>
 
 <body>
-    <div class="page-shell">
+    <!-- Splash Loading Screen (Appears first for 2 seconds before revealing the UCC Portal) -->
+    <section id="splash" class="splash-screen" aria-label="Loading Union Christian College Portal">
+        <img class="splash-logo" src="https://ucc.edu.ph/media/42dd59f55328a676" alt="Union Christian College Official Seal" width="110" height="110">
+        <p class="splash-title">Union Christian College</p>
+        <p class="splash-sub">Loading UCC Portal...</p>
+        <div class="loader" aria-hidden="true"></div>
+    </section>
+
+    <div id="pageShell" class="page-shell hidden">
         <!-- Top University Header Banner (Same UI as Week 2 & 3 + Dark/Light Mode Switch) -->
         <div class="bg1">
             <header class="card">
@@ -56,7 +64,7 @@
                     <a href="../week2/week2.html">Week 2 Activity</a>
                     <a href="../week3/week2.html">Week 3 Activity</a>
                     <a href="week4.html" aria-current="page">Week 4 (UCC Portal)</a>
-                    <a href="MyApp/index.html" class="app-link">MyApp (Login / Sign Up)</a>
+                    <button type="button" class="sidebar-btn app-link" data-open-myapp>MyApp (Login / Sign Up)</button>
                     <a href="#about">About Us</a>
                     <a href="#schools">Academic Schools</a>
                     <a href="#values">Core Values (F.I.R.E.S.)</a>
@@ -139,7 +147,7 @@
                 <div class="welcome-box">
                     <p id="alert">Welcome to UCC San Fernando!</p>
                     <span class="welcome-sub">Week 4 Interactive Portal &amp; MyApp</span>
-                    <a class="portal-signin-btn" href="MyApp/index.html">Open MyApp (Sign In / Sign Up)</a>
+                    <button type="button" class="portal-signin-btn" data-open-myapp>Open MyApp (Sign In / Sign Up)</button>
                 </div>
 
                 <h2 id="post-notice-heading">Post UCC Notice</h2>
@@ -346,6 +354,42 @@
             <p>&copy; 2026 Union Christian College | Widdoes St., City of San Fernando, La Union | CSAE 104 Web Programming (Week 4)</p>
         </footer>
     </div>
+
+    <!-- MyApp Sign Up / Login Modal Popup (Appears right on screen without opening a new tab) -->
+    <dialog id="myAppDialog" class="myapp-dialog" closedby="any" aria-label="MyApp Account Sign Up and Login">
+        <button type="button" id="closeMyApp" class="dialog-close" aria-label="Close MyApp popup">&times;</button>
+
+        <section id="register" class="modal-screen">
+            <form id="regForm" class="myapp-card">
+                <h2>Create account</h2>
+                <input name="name" placeholder="Name" aria-label="Name" required>
+                <input name="email" type="email" placeholder="Email" aria-label="Email" required>
+                <input name="password" type="password" placeholder="Password" aria-label="Password" required>
+                <input name="confirm" type="password" placeholder="Confirm password" aria-label="Confirm password" required>
+                <button type="submit" class="myapp-btn">Register</button>
+                <p id="regMsg" class="myapp-message"></p>
+                <a href="#" id="toLogin" class="myapp-switch-link">I have an account</a>
+            </form>
+        </section>
+
+        <section id="login" class="modal-screen hidden">
+            <form id="logForm" class="myapp-card">
+                <h2>Log in</h2>
+                <input name="email" type="email" placeholder="Email" aria-label="Email" required>
+                <input name="password" type="password" placeholder="Password" aria-label="Password" required>
+                <button type="submit" class="myapp-btn">Log in</button>
+                <p id="logMsg" class="myapp-message"></p>
+                <a href="#" id="toRegister" class="myapp-switch-link">Create an account</a>
+            </form>
+        </section>
+
+        <section id="welcome" class="modal-screen hidden">
+            <div class="myapp-card myapp-welcome">
+                <h2 id="welcomeText">Welcome!</h2>
+                <button type="button" id="logout" class="myapp-btn">Log out</button>
+            </div>
+        </section>
+    </dialog>
 </body>
 
 </html>

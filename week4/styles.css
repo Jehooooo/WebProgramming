@@ -71,6 +71,61 @@ body {
     padding-inline: clamp(1rem, 2.5vw, 2rem);
 }
 
+.hidden {
+    display: none !important;
+}
+
+/* Splash Loading Screen (from Step-by-Step Slides) */
+.splash-screen {
+    min-block-size: 100dvh;
+    display: grid;
+    gap: 0.9rem;
+    place-content: center;
+    justify-items: center;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.splash-logo {
+    inline-size: 110px;
+    block-size: 110px;
+    object-fit: contain;
+    background-color: #ffffff;
+    padding: 8px;
+    border-radius: 50%;
+    border: 4px solid var(--ucc-gold-400);
+    box-shadow: var(--shadow-md);
+}
+
+.splash-title {
+    margin: 0;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 800;
+    color: var(--ucc-green-900);
+}
+
+.splash-sub {
+    margin: 0;
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.loader {
+    inline-size: 44px;
+    block-size: 44px;
+    border: 4px solid var(--border-subtle);
+    border-top-color: var(--ucc-gold-400);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 /* Header Banner */
 .bg1 {
     background: linear-gradient(135deg, var(--banner-start) 0%, var(--banner-mid) 65%, var(--banner-end) 100%);
@@ -284,10 +339,15 @@ body {
     margin: 0;
 }
 
-.left-sidebar a {
+.left-sidebar a,
+.left-sidebar .sidebar-btn {
     display: flex;
     align-items: safe center;
     justify-content: space-between;
+    inline-size: 100%;
+    font-family: inherit;
+    text-align: left;
+    cursor: pointer;
     background-color: var(--ucc-green-50);
     color: var(--ucc-green-900);
     padding-block: 0.7rem;
@@ -300,20 +360,23 @@ body {
     transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
 }
 
-.left-sidebar a:hover {
+.left-sidebar a:hover,
+.left-sidebar .sidebar-btn:hover {
     background-color: var(--banner-mid);
     color: #ffffff;
     transform: translateX(3px);
     text-decoration: none;
 }
 
-.left-sidebar a.app-link {
+.left-sidebar a.app-link,
+.left-sidebar .sidebar-btn.app-link {
     background-color: var(--ucc-gold-100);
     border-color: rgba(212, 160, 23, 0.45);
     font-weight: 700;
 }
 
-.left-sidebar a.app-link:hover {
+.left-sidebar a.app-link:hover,
+.left-sidebar .sidebar-btn.app-link:hover {
     background-color: var(--banner-mid);
     border-color: var(--banner-mid);
     color: #ffffff;
@@ -564,13 +627,16 @@ li strong {
 .portal-signin-btn {
     display: inline-block;
     margin-block-start: 0.75rem;
-    padding: 0.5rem 0.95rem;
+    padding: 0.6rem 1.05rem;
+    border: none;
     border-radius: var(--radius-sm);
     background-color: var(--banner-start);
     color: #ffffff;
     text-decoration: none;
-    font-size: 0.84rem;
+    font-family: inherit;
+    font-size: 0.86rem;
     font-weight: 700;
+    cursor: pointer;
     transition: background-color 0.18s ease, transform 0.15s ease;
 }
 
@@ -874,6 +940,123 @@ a:focus-visible {
     padding: 0.35rem 0.65rem;
     border-radius: var(--radius-sm);
     font-size: 0.84rem;
+}
+
+/* MyApp Modal Dialog Popup */
+.myapp-dialog {
+    padding: 0;
+    border: none;
+    border-radius: var(--radius-lg);
+    background: transparent;
+    color: var(--text-main);
+    max-inline-size: min(92vw, 360px);
+    inline-size: 100%;
+    overflow: auto;
+    box-shadow: var(--shadow-md);
+}
+
+dialog:modal {
+    overscroll-behavior: contain;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(4px);
+    overflow: hidden;
+    overscroll-behavior: contain;
+}
+
+.dialog-close {
+    position: absolute;
+    inset-block-start: 0.65rem;
+    inset-inline-end: 0.65rem;
+    inline-size: 34px;
+    block-size: 34px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--ucc-green-50);
+    color: var(--ucc-green-900);
+    font-size: 1.35rem;
+    line-height: 1;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.dialog-close:hover {
+    background-color: var(--banner-mid);
+    color: #ffffff;
+}
+
+.myapp-card {
+    display: grid;
+    gap: 0.75rem;
+    padding: 1.75rem 1.5rem 1.5rem;
+    border-radius: var(--radius-lg);
+    background-color: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-block-start: 4px solid var(--ucc-gold-400);
+}
+
+.myapp-card h2 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.35rem;
+    color: var(--ucc-green-900);
+}
+
+.myapp-card input {
+    inline-size: 100%;
+    padding: 0.65rem 0.8rem;
+    border-radius: var(--radius-sm);
+    border: 1.5px solid var(--border-input);
+    background-color: var(--input-bg);
+    color: var(--text-main);
+    font: inherit;
+    font-size: max(1rem, 1em);
+    min-block-size: 44px;
+}
+
+.myapp-btn {
+    padding: 0.7rem 1rem;
+    min-block-size: 44px;
+    border-radius: var(--radius-sm);
+    border: none;
+    background-color: var(--ucc-gold-400);
+    color: #1c1c22;
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+    transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.myapp-btn:hover {
+    filter: brightness(1.05);
+    transform: translateY(-1px);
+}
+
+.myapp-message {
+    margin: 0;
+    color: light-dark(#c92a2a, #f87171);
+    font-size: 0.88rem;
+    font-weight: 600;
+    min-block-size: 1.2em;
+}
+
+.myapp-switch-link {
+    color: var(--ucc-green-800);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+}
+
+.myapp-switch-link:hover {
+    text-decoration: underline;
+}
+
+.myapp-welcome {
+    text-align: center;
 }
 
 /* Footer */
