@@ -1,4 +1,4 @@
-// 1. Two-state Dark / Light Theme Switch (shared via localStorage with MyApp/loginform.html)
+// 1. Dark / Light Theme Switch (synced via localStorage "theme" with MyApp/index.html)
 const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
 const themeToggle = document.getElementById("themeToggle");
 const darkMedia = window.matchMedia("(prefers-color-scheme: dark)");
@@ -9,7 +9,7 @@ function getSystemScheme() {
 
 function getStoredScheme() {
     try {
-        const value = localStorage.getItem("color-scheme");
+        const value = localStorage.getItem("theme") || localStorage.getItem("color-scheme");
         return value === "light" || value === "dark" ? value : null;
     } catch (e) {
         return null;
@@ -26,18 +26,13 @@ if (themeToggle) {
         const rendered = getStoredScheme() ?? system;
         const target = rendered === "dark" ? "light" : "dark";
 
-        if (target === system) {
-            try { localStorage.removeItem("color-scheme"); } catch (e) { /* ignore */ }
-            applyScheme(null);
-        } else {
-            try { localStorage.setItem("color-scheme", target); } catch (e) { /* ignore */ }
-            applyScheme(target);
-        }
+        try { localStorage.setItem("theme", target); } catch (e) { /* ignore */ }
+        applyScheme(target);
     });
 }
 
 window.addEventListener("storage", (e) => {
-    if (e.key === "color-scheme") {
+    if (e.key === "theme" || e.key === "color-scheme") {
         applyScheme(getStoredScheme());
     }
 });

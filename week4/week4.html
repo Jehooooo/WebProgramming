@@ -7,7 +7,7 @@
     <meta name="color-scheme" content="light dark">
     <script>
         try {
-            const saved = localStorage.getItem("color-scheme");
+            const saved = localStorage.getItem("theme") || localStorage.getItem("color-scheme");
             if (saved === "light" || saved === "dark") {
                 document.querySelector('meta[name="color-scheme"]').content = saved;
             }
@@ -56,7 +56,7 @@
                     <a href="../week2/week2.html">Week 2 Activity</a>
                     <a href="../week3/week2.html">Week 3 Activity</a>
                     <a href="week4.html" aria-current="page">Week 4 (UCC Portal)</a>
-                    <a href="MyApp/loginform.html" class="app-link">MyApp (Login / Sign Up)</a>
+                    <a href="MyApp/index.html" class="app-link">MyApp (Login / Sign Up)</a>
                     <a href="#about">About Us</a>
                     <a href="#schools">Academic Schools</a>
                     <a href="#values">Core Values (F.I.R.E.S.)</a>
@@ -139,7 +139,7 @@
                 <div class="welcome-box">
                     <p id="alert">Welcome to UCC San Fernando!</p>
                     <span class="welcome-sub">Week 4 Interactive Portal &amp; MyApp</span>
-                    <a class="portal-signin-btn" href="MyApp/loginform.html">Open MyApp (Sign In / Sign Up)</a>
+                    <a class="portal-signin-btn" href="MyApp/index.html">Open MyApp (Sign In / Sign Up)</a>
                 </div>
 
                 <h2 id="post-notice-heading">Post UCC Notice</h2>
