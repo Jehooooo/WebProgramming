@@ -379,7 +379,7 @@ section:target {
     border-block-end: 2px solid var(--ucc-gold-400);
 }
 
-.bottom-card > h2 {
+.bottom-card>h2 {
     font-size: 1.35rem;
 }
 

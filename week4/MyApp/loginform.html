@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <script>
+        try {
+            const saved = localStorage.getItem("color-scheme");
+            if (saved === "light" || saved === "dark") {
+                document.querySelector('meta[name="color-scheme"]').content = saved;
+            }
+        } catch (e) { /* Ignore storage access errors */ }
+    </script>
+    <title>UCC MyApp - Sign In &amp; Create Account (Week 4)</title>
+    <link rel="stylesheet" href="loginform.css">
+    <script src="loginform.js" defer></script>
+</head>
+
+<body>
+    <div class="auth-shell">
+        <header class="top-bar">
+            <div class="brand-mark">
+                <span class="brand-dot" aria-hidden="true">U</span>
+                <span>UCC Account Portal</span>
+            </div>
+
+            <button type="button" id="themeToggle" class="theme-switch" aria-label="Switch color theme">
+                <span class="switch-track" aria-hidden="true">
+                    <span class="switch-thumb"></span>
+                </span>
+                <span class="state-dark">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <span>Dark</span>
+                </span>
+                <span class="state-light">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <span>Light</span>
+                </span>
+            </button>
+        </header>
+
+        <main class="auth-card">
+            <div class="mode-tabs" role="tablist" aria-label="Authentication Mode">
+                <button type="button" role="tab" id="tab-login" class="mode-tab" aria-selected="true"
+                    aria-controls="panel-login">
+                    Sign In
+                </button>
+                <button type="button" role="tab" id="tab-signup" class="mode-tab" aria-selected="false"
+                    aria-controls="panel-signup">
+                    Sign Up
+                </button>
+            </div>
+
+            <div id="statusBanner" class="status-banner" role="status" aria-live="polite"></div>
+
+            <!-- Sign In Panel -->
+            <section id="panel-login" class="auth-panel" role="tabpanel" aria-labelledby="tab-login">
+                <div class="panel-header">
+                    <h1>Welcome back</h1>
+                    <p>Sign in with your email and password to continue.</p>
+                </div>
+
+                <form id="loginForm" action="#login" method="post">
+                    <div class="field">
+                        <label for="login-email">Email address</label>
+                        <span id="login-email-hint" class="hint">Format: you@example.com</span>
+                        <input type="email" id="login-email" name="email" autocomplete="username" spellcheck="false"
+                            enterkeyhint="next" placeholder="you@example.com" aria-describedby="login-email-hint"
+                            data-error="login-email-error" required>
+                        <div id="login-email-error" class="error-msg">
+                            <span role="img" aria-label="Error">❌</span> Enter an email address in the format
+                            you@example.com.
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="login-password">Password</label>
+                        <div class="input-wrap">
+                            <input type="password" id="login-password" name="password" autocomplete="current-password"
+                                enterkeyhint="done" placeholder="Enter your password" minlength="6"
+                                data-error="login-password-error" required>
+                            <button type="button" class="toggle-pw" data-target="login-password" aria-pressed="false">
+                                Show
+                            </button>
+                        </div>
+                        <div id="login-password-error" class="error-msg">
+                            <span role="img" aria-label="Error">❌</span> Please enter your password (at least 6
+                            characters).
+                        </div>
+                    </div>
+
+                    <div class="form-meta">
+                        <label class="check-label" for="remember-me">
+                            <input type="checkbox" id="remember-me" name="remember">
+                            <span>Remember me</span>
+                        </label>
+                        <button type="button" id="forgotBtn" class="inline-link">Forgot password?</button>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Sign In</button>
+                </form>
+
+                <div class="switch-footer">
+                    New here?
+                    <button type="button" class="inline-link" data-switch-tab="signup">Create an account</button>
+                </div>
+            </section>
+
+            <!-- Sign Up Panel -->
+            <section id="panel-signup" class="auth-panel" role="tabpanel" aria-labelledby="tab-signup" hidden>
+                <div class="panel-header">
+                    <h1>Create your account</h1>
+                    <p>Fill in your details below to get started.</p>
+                </div>
+
+                <form id="signupForm" action="#signup" method="post">
+                    <div class="field">
+                        <label for="signup-name">Full name</label>
+                        <input type="text" id="signup-name" name="fullname" autocomplete="name" enterkeyhint="next"
+                            placeholder="Juan Dela Cruz" minlength="2" data-error="signup-name-error" required>
+                        <div id="signup-name-error" class="error-msg">
+                            <span role="img" aria-label="Error">❌</span> Please enter your full name (at least 2
+                            characters).
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="signup-email">Email address</label>
+                        <span id="signup-email-hint" class="hint">Format: you@example.com</span>
+                        <input type="email" id="signup-email" name="email" autocomplete="username" spellcheck="false"
+                            enterkeyhint="next" placeholder="you@example.com" aria-describedby="signup-email-hint"
+                            data-error="signup-email-error" required>
+                        <div id="signup-email-error" class="error-msg">
+                            <span role="img" aria-label="Error">❌</span> Enter an email address in the format
+                            you@example.com.
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="signup-password">New password</label>
+                        <ul id="signup-password-rules" class="rules-list">
+                            <li>At least 8 characters</li>
+                            <li>One uppercase letter</li>
+                            <li>One lowercase letter</li>
+                            <li>One number &amp; symbol</li>
+                        </ul>
+                        <div class="input-wrap">
+                            <input type="password" id="signup-password" name="new-password" autocomplete="new-password"
+                                enterkeyhint="done" placeholder="Create a strong password" minlength="8"
+                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}"
+                                aria-describedby="signup-password-rules" data-error="signup-password-error" required>
+                            <button type="button" class="toggle-pw" data-target="signup-password" aria-pressed="false">
+                                Show
+                            </button>
+                        </div>
+                        <div id="signup-password-error" class="error-msg">
+                            <span role="img" aria-label="Error">❌</span> Password doesn't meet all the requirements
+                            listed above.
+                        </div>
+                    </div>
+
+                    <div class="form-meta">
+                        <label class="check-label" for="accept-terms">
+                            <input type="checkbox" id="accept-terms" name="terms" data-error="terms-error" required>
+                            <span>I agree to the Terms &amp; Privacy Policy</span>
+                        </label>
+                        <div id="terms-error" class="error-msg">
+                            <span role="img" aria-label="Error">❌</span> You must agree to the Terms &amp; Privacy
+                            Policy to create an account.
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Create Account</button>
+                </form>
+
+                <div class="switch-footer">
+                    Already have an account?
+                    <button type="button" class="inline-link" data-switch-tab="login">Sign in</button>
+                </div>
+            </section>
+        </main>
+
+        <nav class="portal-back-nav" aria-label="Return Navigation">
+            <a href="../week4.html">&larr; Back to Week 4 (UCC Portal)</a>
+            <a href="../../index.html">All Submissions</a>
+        </nav>
+    </div>
+</body>
+
+</html>
